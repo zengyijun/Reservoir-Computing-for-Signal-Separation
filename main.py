@@ -13,7 +13,6 @@ import pickle, gzip
 from matplotlib.pyplot import *
 import scipy.linalg as linalg
 import scipy
-import random
 import matplotlib as mpl
 from scipy.sparse import coo_matrix
 import numpy as np
@@ -116,6 +115,7 @@ Yt = sig1[None,initLen+1:trainLen+1]
 x = zeros((resSize,1))
 for t in range(trainLen):
     u = mixed_s[t,np.newaxis].T
+
     x = (1-a)*x + a*tanh( dot( Win, vstack((1,u)) ) + dot( W, x ) )
     if t >= initLen:
         X[:,t-initLen] = vstack((1,u,x))[:,0]

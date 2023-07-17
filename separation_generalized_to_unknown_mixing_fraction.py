@@ -276,7 +276,7 @@ for it in range(1):
 
     test_alp=[]
     for i in range(len(test_alp_fit)):
-        test_alp.append((p-test_alp_fit[i]).roots[1])'''
+        test_alp.append((p-test_alp_fit[i]).roots[1])
     
     
     
