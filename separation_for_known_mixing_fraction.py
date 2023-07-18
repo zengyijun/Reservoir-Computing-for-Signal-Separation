@@ -22,10 +22,14 @@ import matplotlib.pyplot as plt
 import scipy as sp
 import mdp
 
+# 一个类似字典变量，用于设置属性的默认值
+# 设置x轴和y轴的字体大小为16
 mpl.rcParams['xtick.labelsize'] = 16
 mpl.rcParams['ytick.labelsize'] = 16
 random.seed(44)
 
+
+# 本方法与weiner的区别
 res=[]
 weiner=[]
 res_num=[]
@@ -36,6 +40,7 @@ for sp in range(1):
     cd=1.0
     mix=0.5#sp*0.1
 
+    # 定义了一个四阶龙库格达
     def rKN(x, fx, hs):
         xk = []
 
@@ -52,7 +57,7 @@ for sp in range(1):
 
         x = x + (k1 + 2*(k2 + k3) + k4)/6
         return x
-
+    # 两个
     param=1.2
     def lorenz2(inp, s=10*param, r=28*param, b=2.667*param):
         x,y,z=inp[0],inp[1],inp[2]
@@ -71,6 +76,7 @@ for sp in range(1):
 
 
     dt=0.01
+    # 创建了一个从 0 到（但不包括）1000 的数组，其中每个元素之间的间隔为 0.01。
     x=np.arange(0,1000,0.01)
     inp1=[]
     inp2=[]
